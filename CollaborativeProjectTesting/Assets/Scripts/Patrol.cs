@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+//This class handles enemy movement using nav meshes and nav mesh agents
+//main patrol code can be found in unity documentation: https://docs.unity3d.com/Manual/nav-AgentPatrol.html
+
+//code for finding a player and chasing them was made 
+//with help from CodeMonkeys guide: https://www.youtube.com/watch?v=db0KWYaWfeM&ab_channel=CodeMonkey
 public class Patrol : MonoBehaviour
 {
     private enum State
