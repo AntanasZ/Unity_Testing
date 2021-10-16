@@ -34,8 +34,8 @@ public class PlaceTrap : MonoBehaviour
     {
         if(trapCount <= 10) //check if there are less than 10 traps
         {
-            //if (Random.Range(0, 100) > 50) //roll to see if trapper will place a trap(50% chance)
-            //{
+            if (Random.Range(0, 100) > 50) //roll to see if trapper will place a trap(50% chance)
+            {
                 //instanciate a trap object and place it under trappers current position
                 RaycastHit hitInfo;
                 GameObject currentTrap = Instantiate(bearTrapPrefab, Vector3.zero, Quaternion.Euler(0, 0, 0));
@@ -48,7 +48,7 @@ public class PlaceTrap : MonoBehaviour
                     bearTraps[0] = currentTrap;
                     trapCount++;
                 }
-            //}       
+            }       
         }
     }
 
