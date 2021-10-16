@@ -28,6 +28,17 @@ public class Patrol : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
 
+        //adjust enemy speed based on what enemy they are
+        //trapper uses default speed
+        if(agent.tag.Equals("ChaserEnemy"))
+        {
+            agent.speed = 5f;
+        }
+        else if(agent.tag.Equals("ThrowerEnemy"))
+        {
+            agent.speed = 2.5f;
+        }
+
         // Disabling auto-braking allows for continuous movement
         // between points (ie, the agent doesn't slow down as it
         // approaches a destination point).
@@ -38,7 +49,7 @@ public class Patrol : MonoBehaviour
 
     void HandleMovement()
     {
-        if(state == State.Patrol)
+        if(state == State.Patrol) //patrolling
         {
             //returns if no points have been set up
             if (points.Length == 0)
@@ -47,11 +58,10 @@ public class Patrol : MonoBehaviour
             //set agent to go to the currently selected destination
             agent.destination = points[destPoint].position;
 
-            //choose the next point in the array as the destination
-            //cycling to the start if necessary
-            destPoint = Random.Range(0, points.Length - 1);//(destPoint + 1) % points.Length;
+            //choose the next point in the array as the destination randomly
+            destPoint = Random.Range(0, points.Length - 1);
         }
-        else
+        else //chasing player
         {
             agent.destination = player.position;
         }
