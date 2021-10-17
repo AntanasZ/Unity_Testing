@@ -10,7 +10,7 @@ using UnityEngine.AI;
 //with help from CodeMonkeys guide: https://www.youtube.com/watch?v=db0KWYaWfeM&ab_channel=CodeMonkey
 public class Patrol : MonoBehaviour
 {
-    private enum State
+    public enum State
     {
         Patrol,
         ChaseTarget
@@ -21,7 +21,7 @@ public class Patrol : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField]
     private Transform player;
-    private State state = State.Patrol;
+    public State state = State.Patrol;
 
     // Start is called before the first frame update
     void Start()
