@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//timer class was made with help from:
+//https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/
+
 public class Timer : MonoBehaviour
 {
     [SerializeField]
@@ -19,6 +22,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //start timer
         timerIsRunning = true;
     }
 
@@ -27,12 +31,13 @@ public class Timer : MonoBehaviour
     {
         if(timerIsRunning)
         {
+            //if timer is running and still time remaining, decrease and display remaining time
             if(timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
                 DisplayTime(timeRemaining);
             }
-            else
+            else //if timer runs out, stop timer and display appropriate text
             {
                 timeRemaining = 0;
                 timerIsRunning = false;
@@ -51,17 +56,20 @@ public class Timer : MonoBehaviour
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
+    //if player does the wrong action, timer gets decreased
     public void decreaseTime()
     {
         timeRemaining -= timeToDecrease;
     }
 
+    //if player solves puzzle, timer is stopped and appropriate text is displayed
     public void stopTimer()
     {
         timerIsRunning = false;
         displayFinishText("You Win");
     }
 
+    //changes timer text to something else
     private void displayFinishText(string finishText)
     {
         timeText.text = finishText;

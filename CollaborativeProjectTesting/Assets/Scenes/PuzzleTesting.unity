@@ -948,8 +948,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a31191f885d25af499a433835bf27c45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 100
-  timeToDecrease: 10
+  timeRemaining: 120
+  timeToDecrease: 30
   timeText: {fileID: 528439178}
 --- !u!1 &651475095
 GameObject:
@@ -1994,6 +1994,7 @@ MonoBehaviour:
   selectableTag: Lever
   correctOrder: {fileID: 11400000, guid: eb65b8252ec99544f80fb6b0d3b401e1, type: 2}
   timer: {fileID: 528439180}
+  puzzleFinished: 0
 --- !u!4 &1703387356
 Transform:
   m_ObjectHideFlags: 0
