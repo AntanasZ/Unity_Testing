@@ -9,6 +9,7 @@ TagManager:
   - TrapperEnemy
   - ThrowerEnemy
   - BearTrap
+  - Lever
   layers:
   - Default
   - TransparentFX
