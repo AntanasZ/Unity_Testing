@@ -42,7 +42,7 @@ public class PullLever : MonoBehaviour
         if(leverCount < 5)
         {
             //clicking on lever
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hitInfo;

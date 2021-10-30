@@ -16,6 +16,8 @@ public class MouseLook : MonoBehaviour
     {
         //locks mouse to the screen while looking
         Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     // Update is called once per frame
