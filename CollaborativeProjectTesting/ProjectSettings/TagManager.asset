@@ -10,6 +10,7 @@ TagManager:
   - ThrowerEnemy
   - BearTrap
   - Lever
+  - ShootingTarget
   layers:
   - Default
   - TransparentFX
